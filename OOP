@@ -1,0 +1,22 @@
+class Mobile():
+    def __init__(self):
+        self.screenwidth=66
+        self.cameras=4
+        self.height=210
+        self.colour="red"
+    def display_values(self):
+        print(self.screenwidth)
+        print(self.cameras)
+        print(self.height)
+        print(self.colour)
+    #Getter   
+    def get_cameras(self):
+        return self.cameras()
+    #Setter
+    def set_cameras(self,c):
+        self.cameras=c
+
+mobile=Mobile()
+mobile.display_values()
+print(mobile.cameras)
+
