@@ -33,3 +33,38 @@ for i in range(1,10):
     list3[j+1] = e
 print(list3)
 
+#Merge sort
+lists=[16,43,26,74,9,2,1,74,12,75]
+lengthol=len(lists)
+def mergesort(lists,low1,high1):
+    if low1>high1:
+        a=low1+high1
+        middle1=a//2
+        mergesort(lists,low1,middle1)
+        mergesort(lists,middle1+1,high1)
+        merge(lists,low1,middle1,high1)
+def merge(lists,low1,middle1,high1):
+    left=lists[low1:middle1+1]
+    right=lists[middle1:high1+1]
+    i=0
+    j=0
+    k=low1
+    while i<len(left) and j<len(right):
+        if left(i)<=right(j):
+            lists[k]=left(i)
+            i=i+1
+            k=k+1
+        if left(i)>=right(j):
+            lists[k]=right(j)
+            j=j+1
+            k=k+1
+    while i<len(left):
+        lists[k]=left(i)
+        i=i+1
+        k=k+1
+    while j<len(right):
+        lists[k]=right(j)
+        j=j+1
+        k=k+1
+mergesort(lists,0,lengthol-1)
+print(lists)
